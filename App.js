@@ -8,10 +8,14 @@ import { RecoilRoot } from 'recoil'
 
 import Landing from './Landing'
 import { AddCardPage } from './addCard'
+import {loadDatabase, createTables } from './database/database_commands'
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const database = loadDatabase();
+  console.log(database);
+  createTables(database);
   return (
     <SafeAreaProvider>
       <RecoilRoot>
