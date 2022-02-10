@@ -6,8 +6,8 @@ import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/
 import * as React from 'react';
 import { RecoilRoot } from 'recoil'
 
-import Landing from './Landing'
-import { AddCardPage } from './addCard'
+import Landing from './screens/Landing'
+import { AddCardPage } from './screens/addCard'
 
 import { theme } from './themes/Theme';
 

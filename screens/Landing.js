@@ -4,7 +4,7 @@ import { ListItem, Icon } from 'react-native-elements';
 import { useState } from "react";
 
 import { MaterialIcons } from '@expo/vector-icons';
-import MenuButton from "./components/MenuButton";
+import MenuButton from "../components/MenuButton";
 
 
 export const list = [
