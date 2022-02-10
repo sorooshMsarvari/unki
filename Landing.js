@@ -1,7 +1,12 @@
-import { View } from "react-native"
-import { Button, Text } from 'react-native-elements'
-import { StyleSheet } from 'react-native'
-import { ListItem, Icon } from 'react-native-elements'
+import { View } from "react-native";
+import { StyleSheet } from 'react-native';
+import { ListItem, Icon } from 'react-native-elements';
+import { useState } from "react";
+
+import { MaterialIcons } from '@expo/vector-icons';
+import MenuButton from "./components/MenuButton";
+
+
 export const list = [
     {
         title: 'Appointments',
@@ -14,7 +19,9 @@ export const list = [
 ]
 
 
-const Landing = ({navigation}) => {
+export default function Landing({ navigation }) {
+
+
     return (
         <>
             <View style={styles.container}>
@@ -31,21 +38,12 @@ const Landing = ({navigation}) => {
                 }
 
             </View>
-            <View style={styles.button}>
-                <Button
-                    icon={{
-                        name: 'add',
-                        type: 'material',
-                        size: 15,
-                        color: 'white',
-                    }}
-                    buttonStyle={styles.buttonBorder}
-                    onPress={() =>
-                        navigation.navigate('addCard', { name: 'Jane' })
-                      }
-                />
+            <View>
 
+                <MenuButton navigation={navigation}/>
             </View>
+
+
         </>
     )
 }
@@ -65,8 +63,10 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-    }
+    },
+    menuButton: {
+
+
+    },
 });
 
-
-export default Landing
