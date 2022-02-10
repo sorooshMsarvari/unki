@@ -7,7 +7,7 @@ import * as React from 'react';
 import { RecoilRoot } from 'recoil'
 
 import Landing from './screens/Landing'
-import { AddCardPage } from './screens/addCard'
+import { AddCardPage } from './screens/AddCard'
 
 import { theme } from './themes/Theme';
 
