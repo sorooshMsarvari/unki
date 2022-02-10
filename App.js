@@ -1,5 +1,5 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Header } from 'react-native-elements';
+import { Header, ThemeProvider } from 'react-native-elements';
 import { StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -9,24 +9,29 @@ import { RecoilRoot } from 'recoil'
 import Landing from './Landing'
 import { AddCardPage } from './addCard'
 
+import { theme } from './themes/Theme';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <RecoilRoot>
+    <ThemeProvider theme={theme}>
 
-        {/* <Header
+      <SafeAreaProvider>
+        <RecoilRoot>
+
+          {/* <Header
           centerComponent={{ text: 'Header', style: styles.heading }} />
         <Landing /> */}
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="fuck" component={Landing} />
-            <Stack.Screen name="addCard" component={AddCardPage} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </RecoilRoot>
-    </SafeAreaProvider>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen name="fuck" component={Landing} />
+              <Stack.Screen name="addCard" component={AddCardPage} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </RecoilRoot>
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
 
